@@ -1,0 +1,10 @@
+{
+  "name": "milan-ganivet-cv",
+  "version": "1.0.0",
+  "description": "CV en ligne de Milan Ganivet — Data Engineer & AI Practitioner",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}
