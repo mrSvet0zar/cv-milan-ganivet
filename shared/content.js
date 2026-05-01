@@ -236,7 +236,7 @@ window.CV_CONTENT = {
 // Builds a system prompt used by the AI assistant in every variation.
 window.CV_SYSTEM_PROMPT = (lang) => {
   const c = window.CV_CONTENT[lang];
-  const exps = c.experiences.map(e => `- ${e.role} @ ${e.company} (${e.period}): ${e.bullets.join(' ')}=> ${e.stack.join(', ')}=> ${e.details.join('\n')}`).join('\n');
+  const exps = c.experiences.map(e => `- ${e.role} @ ${e.company} (${e.period}): ${e.bullets.join(' ')}`).join('\n');
   const projs = c.projects.map(p => `- ${p.name}: ${p.tagline}. ${p.description}`).join('\n');
   const skillList = Object.entries(c.skills).map(([k, arr]) => `${k}: ${arr.map(s => s.name).join(', ')}`).join(' | ');
   const academicCursus = c.academicCursus.map(a => `- ${a}`).join('\n');
