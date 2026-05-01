@@ -29,6 +29,7 @@ window.CV_CONTENT = {
           "Automatisation et optimisation de processus complexes.",
         ],
         stack: ["SnapLogic", "Snowflake", "Langflow", "Windmill", "Python"],
+        details: "En tant que consultant, j'ai eu l'opportunité d'intervenir auprès de plusieurs clients comme les groupes PICHET et KP1 dans la construction et pour TRANSGOURMET dans la logistique. Pour PICHET et KP1, mes missions étaient centrées sur de la data ingénierie pure, c'est à dire conception, développement, déploiement, documentation et monitoring de pipelines de données inter-applicatifs. D'un point de vue technique, KP1 et PICHET utilisaient SnapLogic pour maintenir leurs pipelines de données. J'ai eu l'occasion également d'interagir avec des bases Postgres, MySQL, des systèmes de fichiers, et des systèmes de base de données comme SnowFlake sur lesquels étaient hébergés les datalake, datastore et datawarehouses de KP1. Chez TRANSGOURMET, la mission est différente puisqu'il s'agit d'automatiser un processus de prises de commandes par mail, traitées manuellement. Cela m'a demandé de développer un module de récupération de mails en Python, via GraphAPI, de stockage de ces mails sur S3, de parsing de ces mails afin d'en récupérer le contenu complet (métadonnées, corps, pièces jointes), extraction des données pertinentes via LLMs et par appel API vers le framework LangFlow, traitement des réponses du LLM, et enregistrement des données en base de données pour exploitation par les utilisateurs. J'ai également développé une interface web en Python avec le framework NiceGUI permettant aux utilisateurs de consulter les commandes, les modifier et les valider."
       },
       {
         role: "Data Engineer",
@@ -42,6 +43,7 @@ window.CV_CONTENT = {
           "Soutien et formation des utilisateurs, participation à la conduite du changement.",
         ],
         stack: ["SQL Server", "Oracle", "Excel", "VB"],
+        details: "J'ai commencé mon expérience chez Naval Group lors de mon cursus d'ingénieur par apprentissage en 2017. Lors de mon alternance, j'occupais le poste de responsable BASL (Base d'Analyse du Soutien Logistique), c'est à dire que j'étais responsable de la vie des données logistiques (maintenances, équipements, rechanges, outillages, etc.) dans la base de données de l'application de gestion logistique utilisée par les équipes de soutien sur les chantiers et responsable de la maintenance des sous-marins et bâtiments de surface. Par conséquent, j'ai eu l'occasion de perfectionner mon usage du langage SQL en développant de nombreuses procédures d'import / export de données logistiques en PL/SQL. J'ai aussi beaucoup travaillé sur Excel via l'usage et la mise en place de macros VBA pour automatiser le travail des responsable logistiques. A l'issu de mon apprentissage, j'ai été embauché en qualité de Data Engineer et responsable métier dans le cadre d'un projet de développement d'une nouvelle application interface pour la base de données logistique. En qualité de responsable métier, j'ai veillé à ce que le développement respecte les attendus côté métier. J'ai aussi été en charge de mener la conduite du changement auprès des futurs utilisateurs de l'application par le biais de sessions de formation en interne et de rédaction de guide utilisateur. Par soucis de confidentialité, je ne peux pas entrer dans les détails des projets sur lesquels j'ai travaillé, mais j'ai autant travailler sur des programmes pour des clients français que des clients étrangers comme l'Egypte ou l'Australie."
       },
     ],
     projects: [
@@ -73,6 +75,11 @@ window.CV_CONTENT = {
         { name: "LLMs", level: 0.80 },
       ],
     },
+    academicCursus: [
+      "2011 : Baccalauréat Scientifique option SVT au lycée Bellevue à Alès (30).",
+      "2015-2017 : BTS Systèmes Numériques option Informatique et Réseaux au lycée de la CCI de Nîmes (30). Major de promotion, numéro 3 de l'académie de Montpellier. Lauréat du concours Start'Up Lycée qui consistait à simuler la création d'une start-up, répondre à un besoin, constituer une équipe, et présenter le projet à d'eventuels investisseurs. J'ai remporté ce concours avec un projet d'application mobile à destination des personnes en situation de handicap, à mobilité réduite, pour faciliter leurs déplacements en milieu urbain.",
+      "2017-2020 : Diplôme d'ingénieur Informatique et Réseaux spécialisé Etudes et Developpement à l'école des Mines d'Alès (30) en alternance. Lors de cette formation, j'ai pu développé des compétences en algorithmie et développement logiciels, en data management et gestion de projet, en sécurité des systèmes d'information et en développement personnel et professionnel de l'ingénieur. Lors de ce cursus j'ai pu validé un semestre à l'étranger à l'UWE de Bristol en Angleterre."
+    ],
     softSkills: [
       "Pédagogie : développée lors des sessions de formation que je dispensais à mes collègues chez Naval Group (formation aux outils internes, accompagnement des nouveaux arrivants, conduite du changement lors des migrations applicatives).",
       "Communication : compétence clé que je travaille au quotidien, autant dans la vie personnelle que professionnelle. Je crois beaucoup à la clarté du message, à l'écoute active, et à la capacité de vulgariser des sujets techniques complexes pour des interlocuteurs non-techniques.",
@@ -137,6 +144,7 @@ window.CV_CONTENT = {
           "Automation and optimization of complex processes.",
         ],
         stack: ["SnapLogic", "Snowflake", "Langflow", "Windmill", "Python"],
+        details: "As a consultant, I had the opportunity to work with several clients such as the PICHET Group and KP1 in the construction sector, and TRANSGOURMET in logistics. For PICHET and KP1, my assignments were focused on pure data engineering, meaning the design, development, deployment, documentation, and monitoring of inter-application data pipelines. From a technical perspective, both KP1 and PICHET relied on SnapLogic to maintain their data pipelines. I also had the opportunity to work with PostgreSQL and MySQL databases, file systems, and database platforms such as Snowflake, where KP1s data lakes, datastores, and data warehouses were hosted. At TRANSGOURMET, the mission was different, as the objective was to automate a previously manual email-based order processing workflow. This required me to develop a Python module to retrieve emails via the Microsoft Graph API, store them on S3, parse them to extract their full content (metadata, body, and attachments), extract relevant business data using LLMs through API calls to the LangFlow framework, process the LLM responses, and store the resulting structured data in a database for operational use by business users. I also developed a web interface in Python using the NiceGUI framework, enabling users to review, edit, and validate orders."
       },
       {
         role: "Data Engineer",
@@ -150,6 +158,7 @@ window.CV_CONTENT = {
           "User support, training, and contribution to change management.",
         ],
         stack: ["SQL Server", "Oracle", "Excel", "VB"],
+        details: "I began my experience at Naval Group during my engineering apprenticeship program in 2017. During this period, I held the role of BASL Manager (Logistics Support Analysis Database), meaning I was responsible for managing the lifecycle of logistics data (maintenance operations, equipment, spare parts, tooling, etc.) within the logistics management system database used by support teams on shipyard sites and by teams responsible for the maintenance of submarines and surface vessels. As part of this role, I had the opportunity to significantly strengthen my SQL skills by developing numerous PL/SQL procedures for importing and exporting logistics data. I also worked extensively with Excel, designing and implementing VBA macros to automate tasks for logistics managers. At the end of my apprenticeship, I was hired as a Data Engineer and functional lead as part of a project to develop a new interface application for the logistics database. In my role as functional lead, I ensured that the development aligned with business requirements and operational expectations. I was also responsible for supporting change management for future users of the application through internal training sessions and the preparation of user documentation. Due to confidentiality constraints, I cannot provide detailed information about the specific projects I worked on, but I contributed to programs serving both French clients and international clients such as Egypt and Australia."
       },
     ],
     projects: [
@@ -181,6 +190,11 @@ window.CV_CONTENT = {
         { name: "LLMs", level: 0.80 },
       ],
     },
+    academicCursus: [
+      "2011 : Scientific Baccalaureate (Biology specialization) from Lycée Bellevue in Alès.",
+      "2015-2017 : Higher National Diploma (BTS) in Digital Systems, specialization in IT and Networks, from Lycée de la CCI de Nîmes in Nîmes. Graduated top of my class and ranked 3rd in the Montpellier regional academy. Winner of the Start'Up Lycée competition, which involved simulating the creation of a startup by identifying a real-world need, building a team, and pitching the project to potential investors. I won the competition with a mobile application project designed to support people with reduced mobility, helping facilitate their movement in urban environments.",
+      "2017-2020 : Engineering degree in Computer Science and Networks, specialization in Software Engineering and Development, completed through an apprenticeship program at École des Mines d'Alès in Alès. During this program, I developed strong skills in algorithms and software development, data management and project management, information systems security, and both personal and professional development as an engineer. As part of the curriculum, I also completed an academic semester abroad at University of the West of England in Bristol."
+    ],
     softSkills: [
       "Teaching / mentoring: developed during training sessions I led for colleagues at Naval Group (internal-tool training, onboarding new joiners, change management during application migrations).",
       "Communication: a key skill I work on daily, both personally and professionally. I strongly believe in message clarity, active listening, and the ability to translate complex technical topics for non-technical audiences.",
@@ -225,6 +239,7 @@ window.CV_SYSTEM_PROMPT = (lang) => {
   const exps = c.experiences.map(e => `- ${e.role} @ ${e.company} (${e.period}): ${e.bullets.join(' ')}`).join('\n');
   const projs = c.projects.map(p => `- ${p.name}: ${p.tagline}. ${p.description}`).join('\n');
   const skillList = Object.entries(c.skills).map(([k, arr]) => `${k}: ${arr.map(s => s.name).join(', ')}`).join(' | ');
+  const academicCursus = c.academicCursus.map(a => `- ${a}`).join('\n');
   const softSkills = (c.softSkills || []).map(s => `- ${s}`).join('\n');
   const interests = Object.entries(c.interests || {}).map(([k, v]) => `- ${k}: ${v}`).join('\n');
   const contact = `Email: ${c.meta.email} | GitHub: github.com/mrSvet0zar | LinkedIn: linkedin.com/in/milan-ganivet`;
@@ -248,6 +263,9 @@ SKILLS: ${skillList}
 
 SOFT SKILLS:
 ${softSkills}
+
+ACADEMIC CURSUS:
+${academicCursus}
 
 PERSONAL / INTERESTS (use these only when explicitly asked about hobbies, personality, off-work topics, or as a friendly aside — never volunteer them when the question is professional):
 ${interests}
