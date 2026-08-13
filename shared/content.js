@@ -12,9 +12,9 @@ window.CV_CONTENT = {
       availability: "En poste",
     },
     about: [
-      "Je construis des pipelines data comme d'autres construisent des infrastructures : pour qu'ils tiennent la charge, durent dans le temps et servent réellement les équipes.",
-      "Data Engineer depuis 9 ans, j'ai conçu des plateformes robustes pour des environnements exigeants (défense, construction, logistique), avec une préférence marquée pour les systèmes utiles plutôt que les démonstrations théoriques.",
-      "En parallèle, l'IA et les LLM sont mon terrain d'exploration permanent : j'y prototype, j'expérimente et j'y transforme des idées en solutions concrètes. J'aime relier engineering solide et innovation pragmatique. Là où certains voient de la complexité, je vois des architectures à faire émerger.",
+      "L'IA est aujourd'hui au cœur de ma pratique : je conçois des systèmes qui cherchent, raisonnent et décident; et je m'attache à les rendre fiables là où, d'habitude, l'expérimentation s'arrête.",
+      "Des moteurs de recherche augmentée aux agents autonomes, du fine-tuning de modèles à la vision multimodale, j'explore tout le spectre des LLM. Ce qui m'anime, c'est la distance à franchir entre le prototype qui impressionne et le système qui tient vraiment la charge.",
+      "Ce qui fait la différence, c'est mon socle de Data Engineer : neuf ans à bâtir des pipelines robustes pour des environnements exigeants : défense, construction, logistique. Cette rigueur d'ingénierie, je la mets au service de l'IA : je ne pense pas seulement en démonstrations, mais en fiabilité, en échelle et en usage réel.",
     ],
     experiences: [
       {
@@ -156,9 +156,9 @@ window.CV_CONTENT = {
       availability: "Currently employed",
     },
     about: [
-      "I build data pipelines the way others build infrastructure: to hold the load, last over time, and actually serve the teams using them.",
-      "A Data Engineer for 9 years, I've designed robust platforms for demanding environments (defense, construction, logistics), with a strong preference for useful systems over theoretical demos.",
-      "In parallel, AI and LLMs are my permanent playground — I prototype, experiment, and turn ideas into concrete solutions. I like connecting solid engineering with pragmatic innovation. Where some see complexity, I see architectures waiting to emerge.",
+      "AI is now at the core of my work: I build systems that search, reason and decide; and I focus on making them reliable where experimentation usually stops.",
+      "From retrieval-augmented search to autonomous agents, from model fine-tuning to multimodal vision, I explore the full spectrum of LLMs. What drives me is the distance to cross between a prototype that impresses and a system that truly holds up.",
+      "What makes the difference is my Data Engineer backbone: nine years building robust pipelines for demanding environments: defense, construction, logistics. I bring that engineering rigor to AI: I don't think in demos, but in reliability, scale and real-world use.",
     ],
     experiences: [
       {
