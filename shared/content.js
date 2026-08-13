@@ -87,21 +87,32 @@ window.CV_CONTENT = {
       },
     ],
     skills: {
+      "IA & LLM": [
+        { name: "LLMs & Prompting", level: 0.92 },
+        { name: "RAG & sémantique", level: 0.88 },
+        { name: "Agents & tool-use", level: 0.82 },
+        { name: "Fine-tuning QLoRA", level: 0.75 },
+        { name: "Vision multimodale", level: 0.72 },
+      ],
       "Langages": [
         { name: "Python", level: 0.95 },
         { name: "SQL", level: 0.90 },
-        { name: "C/C++", level: 0.70 },
-        { name: "Solidity", level: 0.65 },
+        { name: "JavaScript / TS", level: 0.68 },
+        { name: "C / C++", level: 0.60 },
       ],
       "Data & Pipelines": [
         { name: "SnapLogic", level: 0.85 },
-        { name: "Talend", level: 0.70 },
+        { name: "PL/SQL", level: 0.85 },
         { name: "Snowflake", level: 0.80 },
+        { name: "PostgreSQL", level: 0.80 },
+        { name: "Langflow", level: 0.75 },
       ],
-      "ML & IA": [
-        { name: "LangChain", level: 0.80 },
-        { name: "Tensorflow", level: 0.75 },
-        { name: "LLMs", level: 0.80 },
+      "Frameworks & MLOps": [
+        { name: "FastAPI", level: 0.88 },
+        { name: "PyTorch / HF", level: 0.75 },
+        { name: "React", level: 0.68 },
+        { name: "Docker", level: 0.70 },
+        { name: "CI/CD", level: 0.72 },
       ],
     },
     academicCursus: [
@@ -231,21 +242,32 @@ window.CV_CONTENT = {
       },
     ],
     skills: {
+      "AI & LLM": [
+        { name: "LLMs & Prompting", level: 0.92 },
+        { name: "RAG & semantic", level: 0.88 },
+        { name: "Agents & tool-use", level: 0.82 },
+        { name: "Fine-tuning QLoRA", level: 0.75 },
+        { name: "Multimodal vision", level: 0.72 },
+      ],
       "Languages": [
         { name: "Python", level: 0.95 },
         { name: "SQL", level: 0.90 },
-        { name: "C/C++", level: 0.70 },
-        { name: "Solidity", level: 0.65 },
+        { name: "JavaScript / TS", level: 0.68 },
+        { name: "C / C++", level: 0.60 },
       ],
       "Data & Pipelines": [
         { name: "SnapLogic", level: 0.85 },
-        { name: "Talend", level: 0.70 },
+        { name: "PL/SQL", level: 0.85 },
         { name: "Snowflake", level: 0.80 },
+        { name: "PostgreSQL", level: 0.80 },
+        { name: "Langflow", level: 0.75 },
       ],
-      "ML & AI": [
-        { name: "LangChain", level: 0.80 },
-        { name: "Tensorflow", level: 0.75 },
-        { name: "LLMs", level: 0.80 },
+      "Frameworks & MLOps": [
+        { name: "FastAPI", level: 0.88 },
+        { name: "PyTorch / HF", level: 0.75 },
+        { name: "React", level: 0.68 },
+        { name: "Docker", level: 0.70 },
+        { name: "CI/CD", level: 0.72 },
       ],
     },
     academicCursus: [
