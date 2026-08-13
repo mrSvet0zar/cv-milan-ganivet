@@ -1,7 +1,7 @@
-// Netlify Function: proxies chat requests to Anthropic's Messages API.
-// Secret ANTHROPIC_API_KEY must be set in Site Settings → Environment variables.
+// Vercel Serverless Function: proxies chat requests to Anthropic's Messages API.
+// Secret ANTHROPIC_API_KEY must be set in Vercel → Project Settings → Environment Variables.
 
-// Simple in-memory rate limiter (per warm container — best-effort, not strict).
+// Simple in-memory rate limiter (per warm instance — best-effort, not strict).
 const buckets = new Map();
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const MAX_REQ = 20;               // 20 requests / IP / hour
@@ -15,41 +15,31 @@ function rateLimit(ip) {
   return true;
 }
 
-export default async (req) => {
-  // CORS / method
+export default async function handler(req, res) {
+  // Same-origin on Vercel, but keep permissive CORS so the widget also works if embedded.
+  res.setHeader('access-control-allow-origin', '*');
   if (req.method === 'OPTIONS') {
-    return new Response(null, {
-      status: 204,
-      headers: {
-        'access-control-allow-origin': '*',
-        'access-control-allow-methods': 'POST, OPTIONS',
-        'access-control-allow-headers': 'content-type',
-      },
-    });
+    res.setHeader('access-control-allow-methods', 'POST, OPTIONS');
+    res.setHeader('access-control-allow-headers', 'content-type');
+    return res.status(204).end();
   }
   if (req.method !== 'POST') {
-    return json({ error: 'Method not allowed' }, 405);
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   // Rate limit
   const ip =
-    req.headers.get('x-nf-client-connection-ip') ||
-    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.socket?.remoteAddress ||
     'unknown';
   if (!rateLimit(ip)) {
-    return json({ error: 'Too many requests, please retry later.' }, 429);
+    return res.status(429).json({ error: 'Too many requests, please retry later.' });
   }
 
-  // Parse body
-  let body;
-  try {
-    body = await req.json();
-  } catch {
-    return json({ error: 'Invalid JSON' }, 400);
-  }
-  const { system, messages } = body || {};
+  // Vercel auto-parses the JSON body (content-type: application/json).
+  const { system, messages } = req.body || {};
   if (!system || !Array.isArray(messages) || messages.length === 0) {
-    return json({ error: 'Missing system or messages' }, 400);
+    return res.status(400).json({ error: 'Missing system or messages' });
   }
 
   // Hard caps to protect spend
@@ -58,10 +48,10 @@ export default async (req) => {
     content: String(m.content || '').slice(0, 2000),
   }));
 
-  const apiKey = Netlify.env.get('ANTHROPIC_API_KEY');
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     console.error('ANTHROPIC_API_KEY is not set');
-    return json({ error: 'Server not configured' }, 500);
+    return res.status(500).json({ error: 'Server not configured' });
   }
 
   try {
@@ -83,26 +73,14 @@ export default async (req) => {
     if (!r.ok) {
       const errText = await r.text();
       console.error('Anthropic error', r.status, errText);
-      return json({ error: 'Upstream error' }, 502);
+      return res.status(502).json({ error: 'Upstream error' });
     }
 
     const data = await r.json();
     const text = data.content?.find(b => b.type === 'text')?.text || '';
-    return json({ text });
+    return res.status(200).json({ text });
   } catch (e) {
     console.error(e);
-    return json({ error: 'Internal error' }, 500);
+    return res.status(500).json({ error: 'Internal error' });
   }
-};
-
-function json(obj, status = 200) {
-  return new Response(JSON.stringify(obj), {
-    status,
-    headers: {
-      'content-type': 'application/json',
-      'access-control-allow-origin': '*',
-    },
-  });
 }
-
-export const config = { path: '/.netlify/functions/chat' };

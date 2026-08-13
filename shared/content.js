@@ -48,6 +48,44 @@ window.CV_CONTENT = {
     ],
     projects: [
       {
+        name: "rag-application",
+        tagline: "Chatbot RAG — questions-réponses sur vos documents",
+        description: "Chaîne RAG complète : chunking, embeddings locaux, recherche vectorielle pgvector puis reranking par cross-encoder, génération Claude avec citations des sources et streaming SSE. Ingestion multi-formats (PDF, DOCX, HTML, URL).",
+        stack: ["FastAPI", "React", "pgvector", "Claude", "sentence-transformers"],
+        stars: 0,
+        impact: "Déployé · Railway + Vercel · CI",
+        url: "https://github.com/mrSvet0zar/rag-application",
+        demo: "https://rag-application-flax.vercel.app",
+      },
+      {
+        name: "llm-finetuning-qlora",
+        tagline: "Fine-tuning QLoRA d'un LLM (Qwen2.5-3B)",
+        description: "Fine-tuning QLoRA de Qwen2.5-3B-Instruct sur un corpus Python / Data Science, entraîné localement sur une seule RTX 4070 (8 Go de VRAM). Pipeline MLOps complet : préparation → entraînement → évaluation → fusion → déploiement (FastAPI + Ollama).",
+        stack: ["PyTorch", "PEFT/LoRA", "bitsandbytes", "FastAPI", "Ollama"],
+        stars: 0,
+        impact: "BLEU +135 % vs modèle de base",
+        url: "https://github.com/mrSvet0zar/llm-finetuning-qlora",
+      },
+      {
+        name: "multimodal-image-analyzer",
+        tagline: "Analyse d'images multi-modale (Claude Vision)",
+        description: "Application full-stack qui analyse des images via Claude Vision : description, objets détectés, sentiment, tags et texte extrait, dans 8 langues. Streaming SSE, traitement par lot, export JSON/Markdown, historique persistant.",
+        stack: ["FastAPI", "Claude Vision", "React", "Vite", "SQLite"],
+        stars: 0,
+        impact: "Streaming · 8 langues · 25 tests",
+        url: "https://github.com/mrSvet0zar/multimodal-image-analyzer",
+        demo: "https://multimodal-image-analyzer.vercel.app",
+      },
+      {
+        name: "data-analysis-agent",
+        tagline: "Agent IA autonome d'analyse de données",
+        description: "Agent autonome qui analyse n'importe quel CSV via le tool-use natif de Claude : il choisit ses outils (statistiques, outliers, corrélations, visualisations Plotly), itère, et produit un rapport interactif. Chaque étape est streamée en direct par WebSocket.",
+        stack: ["FastAPI", "Claude tool-use", "React", "Plotly", "WebSockets"],
+        stars: 0,
+        impact: "Boucle agentique · 6 outils",
+        url: "https://github.com/mrSvet0zar/data-analysis-agent",
+      },
+      {
         name: "veille-ia",
         tagline: "Agrégateur d'actualités autour de l'IA",
         description: "Utilisation coordonnée de LLMs Anthropic pour l'analyse d'actualités, le résumé et la publication d'articles vulgarisés, newsletter hebdomadaire, monitoring des coûts de tokens.",
@@ -163,6 +201,44 @@ window.CV_CONTENT = {
     ],
     projects: [
       {
+        name: "rag-application",
+        tagline: "RAG chatbot — Q&A over your documents",
+        description: "End-to-end RAG pipeline: chunking, local embeddings, pgvector search then cross-encoder reranking, Claude generation with source citations and SSE streaming. Multi-format ingestion (PDF, DOCX, HTML, URL).",
+        stack: ["FastAPI", "React", "pgvector", "Claude", "sentence-transformers"],
+        stars: 0,
+        impact: "Deployed · Railway + Vercel · CI",
+        url: "https://github.com/mrSvet0zar/rag-application",
+        demo: "https://rag-application-flax.vercel.app",
+      },
+      {
+        name: "llm-finetuning-qlora",
+        tagline: "QLoRA fine-tuning of an LLM (Qwen2.5-3B)",
+        description: "QLoRA fine-tuning of Qwen2.5-3B-Instruct on a Python / Data Science corpus, trained locally on a single RTX 4070 (8 GB VRAM). Full MLOps pipeline: data prep → training → evaluation → merge → deployment (FastAPI + Ollama).",
+        stack: ["PyTorch", "PEFT/LoRA", "bitsandbytes", "FastAPI", "Ollama"],
+        stars: 0,
+        impact: "BLEU +135% vs base model",
+        url: "https://github.com/mrSvet0zar/llm-finetuning-qlora",
+      },
+      {
+        name: "multimodal-image-analyzer",
+        tagline: "Multi-modal image analysis (Claude Vision)",
+        description: "Full-stack app that analyzes images with Claude Vision: description, detected objects, sentiment, tags and extracted text, in 8 languages. SSE streaming, batch processing, JSON/Markdown export, persistent history.",
+        stack: ["FastAPI", "Claude Vision", "React", "Vite", "SQLite"],
+        stars: 0,
+        impact: "Streaming · 8 languages · 25 tests",
+        url: "https://github.com/mrSvet0zar/multimodal-image-analyzer",
+        demo: "https://multimodal-image-analyzer.vercel.app",
+      },
+      {
+        name: "data-analysis-agent",
+        tagline: "Autonomous data-analysis AI agent",
+        description: "Autonomous agent that analyzes any CSV via Claude's native tool-use: it picks its own tools (statistics, outliers, correlations, Plotly charts), iterates, and produces an interactive report. Every step streamed live over WebSockets.",
+        stack: ["FastAPI", "Claude tool-use", "React", "Plotly", "WebSockets"],
+        stars: 0,
+        impact: "Agentic loop · 6 tools",
+        url: "https://github.com/mrSvet0zar/data-analysis-agent",
+      },
+      {
         name: "veille-ia",
         tagline: "AI news aggregator",
         description: "Coordinated use of Anthropic LLMs for news analysis, summarization and publication of accessible articles, weekly newsletter, token cost monitoring.",
@@ -237,7 +313,10 @@ window.CV_CONTENT = {
 window.CV_SYSTEM_PROMPT = (lang) => {
   const c = window.CV_CONTENT[lang];
   const exps = c.experiences.map(e => `- ${e.role} @ ${e.company} (${e.period}): ${e.bullets.join(' ')}\n+ ${e.details}`).join('\n');
-  const projs = c.projects.map(p => `- ${p.name}: ${p.tagline}. ${p.description}`).join('\n');
+  const projs = c.projects.map(p => {
+    const links = [p.url ? `repo: ${p.url}` : '', p.demo ? `démo: ${p.demo}` : ''].filter(Boolean).join(' | ');
+    return `- ${p.name}: ${p.tagline}. ${p.description} [stack: ${p.stack.join(', ')}]${links ? ` (${links})` : ''}`;
+  }).join('\n');
   const skillList = Object.entries(c.skills).map(([k, arr]) => `${k}: ${arr.map(s => s.name).join(', ')}`).join(' | ');
   const academicCursus = c.academicCursus.map(a => `- ${a}`).join('\n');
   const softSkills = (c.softSkills || []).map(s => `- ${s}`).join('\n');

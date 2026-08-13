@@ -1,5 +1,5 @@
-// Production AI assistant — calls a Netlify Function instead of window.claude.
-// The Netlify Function holds the ANTHROPIC_API_KEY secret server-side.
+// Production AI assistant — calls a Vercel Serverless Function instead of window.claude.
+// The function holds the ANTHROPIC_API_KEY secret server-side.
 
 (function () {
   // Keep a small rolling history so the bot has conversational context.
@@ -15,7 +15,7 @@
     while (history.length > MAX_TURNS * 2) history.shift();
 
     try {
-      const res = await fetch('/.netlify/functions/chat', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({

@@ -194,7 +194,7 @@
   /* Project cards = subplots */
   .subplots-title { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); margin-bottom: 10px; }
   .subplots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .subplot { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--surface); position: relative; overflow: hidden; transition: transform 0.25s, border-color 0.2s; }
+  .subplot { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--surface); position: relative; overflow: hidden; transition: transform 0.25s, border-color 0.2s; text-decoration: none; color: inherit; }
   .subplot:hover { border-color: var(--accent); transform: translateY(-2px); }
   .subplot-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
   .subplot-name { font-family: var(--font-mono); font-weight: 600; color: var(--accent); font-size: 13px; }
@@ -203,8 +203,13 @@
   .subplot-tag { color: var(--text-dim); font-size: 12px; margin-bottom: 10px; }
   .subplot-desc { color: var(--text-dim); font-size: 12px; line-height: 1.55; margin-bottom: 12px; }
   .subplot-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .subplot-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: auto; }
   .subplot-impact { font-family: var(--font-mono); font-size: 10.5px; color: var(--violet); }
   .subplot-impact::before { content: "// "; opacity: 0.5; }
+  .subplot-links { display: flex; gap: 8px; flex-shrink: 0; }
+  .subplot-link { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-faint); white-space: nowrap; transition: color 0.15s; }
+  .subplot:hover .subplot-link.repo { color: var(--accent); }
+  .subplot-link.demo:hover { color: var(--accent-2); text-decoration: underline; }
 
   /* Skill bars */
   .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 28px; }
@@ -540,7 +545,7 @@ projects.render(ax)`,
       <div class="subplots-title">fig, axes = 2×2 subplots · ${c.projects.length} items</div>
       <div class="subplots">
         ${c.projects.map(p => `
-          <div class="subplot">
+          <a class="subplot" href="${p.url}" target="_blank" rel="noopener">
             <div class="subplot-head">
               <div class="subplot-name">${p.name}</div>
               <div class="subplot-stars"><span class="subplot-star">★</span> ${p.stars}</div>
@@ -548,8 +553,14 @@ projects.render(ax)`,
             <div class="subplot-tag">${p.tagline}</div>
             <div class="subplot-desc">${p.description}</div>
             <div class="subplot-chips">${p.stack.map(s => `<span class="chip">${s}</span>`).join('')}</div>
-            <div class="subplot-impact">${p.impact}</div>
-          </div>
+            <div class="subplot-foot">
+              <span class="subplot-impact">${p.impact}</span>
+              <span class="subplot-links">
+                ${p.demo ? `<span class="subplot-link demo" data-href="${p.demo}">démo ↗</span>` : ''}
+                <span class="subplot-link repo">code ↗</span>
+              </span>
+            </div>
+          </a>
         `).join('')}
       </div>
     </div>`
@@ -600,6 +611,14 @@ plt.show()`,
     row.addEventListener('click', () => {
       const i = row.dataset.exp;
       document.querySelectorAll(`.exp-row[data-exp="${i}"]`).forEach(r => r.classList.toggle('expanded'));
+    });
+  });
+
+  // Demo links inside project cards: open the demo URL instead of the repo.
+  document.querySelectorAll('.subplot-link.demo').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(el.dataset.href, '_blank', 'noopener');
     });
   });
 
