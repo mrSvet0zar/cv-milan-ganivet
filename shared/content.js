@@ -23,10 +23,11 @@ window.CV_CONTENT = {
         period: "2024 — présent",
         location: "France",
         bullets: [
-          "J'offre mon expertise à nos clients et les accompagne dans l'élaboration de leurs projets Data & IA.",
-          "Développement et monitoring de pipelines de données inter-applicatifs.",
-          "Maintenance et interrogation de datalake et datastore.",
-          "Automatisation et optimisation de processus complexes.",
+          "Conseil et accompagnement de plusieurs clients grands comptes dans l'élaboration de leurs projets Data & IA.",
+          "Automatisation de processus métier complexes.",
+          "Modernisation de pipelines de données inter-applicatifs.",
+          "Développement d'interfaces inter-applicatives.",
+          "Maintenance, interrogation et optimisation de Datalake & Datastore.",
         ],
         stack: ["SnapLogic", "Snowflake", "Langflow", "Windmill", "Python"],
         details: "En tant que consultant, j'ai eu l'opportunité d'intervenir auprès de plusieurs clients comme les groupes PICHET et KP1 dans la construction et pour TRANSGOURMET dans la logistique. Pour PICHET et KP1, mes missions étaient centrées sur de la data ingénierie pure, c'est à dire conception, développement, déploiement, documentation et monitoring de pipelines de données inter-applicatifs. D'un point de vue technique, KP1 et PICHET utilisaient SnapLogic pour maintenir leurs pipelines de données. J'ai eu l'occasion également d'interagir avec des bases Postgres, MySQL, des systèmes de fichiers, et des systèmes de base de données comme SnowFlake sur lesquels étaient hébergés les datalake, datastore et datawarehouses de KP1. Chez TRANSGOURMET, la mission est différente puisqu'il s'agit d'automatiser un processus de prises de commandes par mail, traitées manuellement. Cela m'a demandé de développer un module de récupération de mails en Python, via GraphAPI, de stockage de ces mails sur S3, de parsing de ces mails afin d'en récupérer le contenu complet (métadonnées, corps, pièces jointes), extraction des données pertinentes via LLMs et par appel API vers le framework LangFlow, traitement des réponses du LLM, et enregistrement des données en base de données pour exploitation par les utilisateurs. J'ai également développé une interface web en Python avec le framework NiceGUI permettant aux utilisateurs de consulter les commandes, les modifier et les valider."
@@ -178,10 +179,11 @@ window.CV_CONTENT = {
         period: "2024 — present",
         location: "France",
         bullets: [
-          "Provide expertise to our clients and support them in designing their Data & AI projects.",
-          "Development and monitoring of inter-application data pipelines.",
-          "Maintenance and querying of datalakes and datastores.",
-          "Automation and optimization of complex processes.",
+          "Advising and supporting several enterprise clients in shaping their Data & AI projects.",
+          "Automation of complex business processes.",
+          "Modernization of inter-application data pipelines.",
+          "Development of inter-application interfaces.",
+          "Maintenance, querying and optimization of data lakes & datastores.",
         ],
         stack: ["SnapLogic", "Snowflake", "Langflow", "Windmill", "Python"],
         details: "As a consultant, I had the opportunity to work with several clients such as the PICHET Group and KP1 in the construction sector, and TRANSGOURMET in logistics. For PICHET and KP1, my assignments were focused on pure data engineering, meaning the design, development, deployment, documentation, and monitoring of inter-application data pipelines. From a technical perspective, both KP1 and PICHET relied on SnapLogic to maintain their data pipelines. I also had the opportunity to work with PostgreSQL and MySQL databases, file systems, and database platforms such as Snowflake, where KP1s data lakes, datastores, and data warehouses were hosted. At TRANSGOURMET, the mission was different, as the objective was to automate a previously manual email-based order processing workflow. This required me to develop a Python module to retrieve emails via the Microsoft Graph API, store them on S3, parse them to extract their full content (metadata, body, and attachments), extract relevant business data using LLMs through API calls to the LangFlow framework, process the LLM responses, and store the resulting structured data in a database for operational use by business users. I also developed a web interface in Python using the NiceGUI framework, enabling users to review, edit, and validate orders."
