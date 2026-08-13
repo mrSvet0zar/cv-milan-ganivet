@@ -198,8 +198,8 @@
   .subplot:hover { border-color: var(--accent); transform: translateY(-2px); }
   .subplot-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
   .subplot-name { font-family: var(--font-mono); font-weight: 600; color: var(--accent); font-size: 13px; }
-  .subplot-stars { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); }
-  .subplot-star { color: var(--accent); }
+  .subplot-lang { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  .lang-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex-shrink: 0; box-shadow: 0 0 0 1px color-mix(in oklab, currentColor 12%, transparent); }
   .subplot-tag { color: var(--text-dim); font-size: 12px; margin-bottom: 10px; }
   .subplot-desc { color: var(--text-dim); font-size: 12px; line-height: 1.55; margin-bottom: 12px; }
   .subplot-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
@@ -451,6 +451,20 @@ function hl(code) {
     .replace(/\b([a-z_][a-z0-9_]*)\(/gi, '<span class="tok-fn">$1</span>(');
 }
 
+/* Canonical GitHub language colors for the project cards. */
+const LANG_COLORS = {
+  "Python": "#3572A5",
+  "Jupyter Notebook": "#DA5B0B",
+  "JavaScript": "#f1e05a",
+  "TypeScript": "#3178c6",
+  "HTML": "#e34c26",
+  "CSS": "#563d7c",
+  "Solidity": "#AA6746",
+  "C++": "#f34b7d",
+  "C": "#555555",
+};
+function langColor(l) { return LANG_COLORS[l] || "var(--text-faint)"; }
+
 let cellCount = 0;
 function cellIdx() { return ++cellCount; }
 
@@ -548,7 +562,7 @@ projects.render(ax)`,
           <a class="subplot" href="${p.url}" target="_blank" rel="noopener">
             <div class="subplot-head">
               <div class="subplot-name">${p.name}</div>
-              <div class="subplot-stars"><span class="subplot-star">★</span> ${p.stars}</div>
+              <div class="subplot-lang"><span class="lang-dot" style="background:${langColor(p.lang)}"></span> ${p.lang}</div>
             </div>
             <div class="subplot-tag">${p.tagline}</div>
             <div class="subplot-desc">${p.description}</div>
