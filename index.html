@@ -76,6 +76,14 @@
   .tbtn:hover { color: var(--text); border-color: var(--accent); }
   .tbtn.primary { background: var(--accent); color: #1a1004; border-color: var(--accent); }
   .tbtn.primary:hover { filter: brightness(1.08); }
+  .tbtn.icon { padding: 5px 9px; font-size: 13px; line-height: 1; }
+
+  /* Toolbar toggles (language / theme) */
+  .seg-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .seg-toggle button { background: transparent; color: var(--text-dim); border: 0; padding: 5px 10px; font: inherit; font-family: var(--font-mono); font-size: 11px; cursor: pointer; transition: color 0.15s, background 0.15s; }
+  .seg-toggle button + button { border-left: 1px solid var(--line); }
+  .seg-toggle button:hover { color: var(--text); }
+  .seg-toggle button.on { background: var(--accent); color: #1a1004; font-weight: 600; }
 
   /* Notebook container */
   .notebook {
@@ -386,6 +394,7 @@
   body[data-anim-low="true"] * { animation-duration: 6s !important; }
 
   @media (max-width: 720px) {
+    .toolbar .kernel, #lastSaved { display: none; }
     .subplots, .skills-grid { grid-template-columns: 1fr; }
     .cell-gutter { display: none; }
     .cell { grid-template-columns: 1fr; }
@@ -400,6 +409,11 @@
   <div class="logo"><span class="logo-dot"></span> jupyter</div>
   <div class="file-name"><strong>milan_ganivet_cv.ipynb</strong> <span id="lastSaved">· last saved 2 min ago</span></div>
   <div class="kernel"><span class="kernel-dot"></span> Python 3.12 · ready</div>
+  <div class="seg-toggle" id="langToggle" role="group" aria-label="Language / Langue">
+    <button type="button" data-lang="fr">FR</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+  <button class="tbtn icon" id="themeToggle" type="button" aria-label="Toggle light/dark theme"><span id="themeIcon">☀</span></button>
   <button class="tbtn primary" id="runAllBtn">▶ Run All</button>
   <button class="tbtn" onclick="window.print()">⇣ PDF</button>
 </div>
@@ -722,13 +736,39 @@ function setupChatbot(L, lang) {
   };
 }
 
-// Set html lang + initial render, re-render on tweak changes.
+// Set html lang + initial render, re-render only when the language changes.
 function applyLang() {
   const l = window.Tweaks.get().lang;
   document.documentElement.lang = l;
 }
-renderNotebook(); applyLang();
-window.Tweaks.onChange((s) => { renderNotebook(); applyLang(); });
+
+// Toolbar toggles: language (FR/EN) + theme (dark/light).
+const langToggle = document.getElementById('langToggle');
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+function syncToolbar() {
+  const s = window.Tweaks.get();
+  langToggle.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.lang === s.lang));
+  // Show the icon of the theme you'd switch TO.
+  themeIcon.textContent = s.theme === 'dark' ? '☀' : '☾';
+  themeToggle.title = s.theme === 'dark'
+    ? (s.lang === 'fr' ? 'Passer en clair' : 'Switch to light')
+    : (s.lang === 'fr' ? 'Passer en sombre' : 'Switch to dark');
+}
+langToggle.querySelectorAll('button').forEach(b => {
+  b.addEventListener('click', () => window.Tweaks.set({ lang: b.dataset.lang }));
+});
+themeToggle.addEventListener('click', () => {
+  const s = window.Tweaks.get();
+  window.Tweaks.set({ theme: s.theme === 'dark' ? 'light' : 'dark' });
+});
+
+renderNotebook(); applyLang(); syncToolbar();
+let lastLang = window.Tweaks.get().lang;
+window.Tweaks.onChange((s) => {
+  syncToolbar();
+  if (s.lang !== lastLang) { lastLang = s.lang; renderNotebook(); applyLang(); }
+});
 
 // Run All — animate kernel dot + cells briefly
 document.getElementById('runAllBtn').addEventListener('click', () => {
