@@ -140,7 +140,7 @@ window.CV_CONTENT = {
       examples: "Exemples",
       exampleQuestions: [
         "Quelle est ton expérience avec les LLMs ?",
-        "Parle-moi de veille-ia",
+        "Parle-moi de ton projet RAG",
         "Qu'as-tu fait chez Naval Group ?",
       ],
     },
@@ -284,7 +284,7 @@ window.CV_CONTENT = {
       examples: "Examples",
       exampleQuestions: [
         "What's your experience with LLMs?",
-        "Tell me about veille-ia",
+        "Tell me about your RAG project",
         "What did you do at Naval Group?",
       ],
     },
