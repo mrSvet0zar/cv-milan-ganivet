@@ -129,6 +129,17 @@ window.CV_CONTENT = {
       jeuxVideo: "Gros joueur, principalement sur des jeux en ligne coopératifs. MMORPG : World of Warcraft. FPS / multi : Overwatch, Counter-Strike, Rainbow Six Siege. Côté solo, j'aime les expériences narratives, très cinématographiques et au scénario complexe — The Last of Us, Death Stranding, Beyond Two Souls — ainsi que des séries plus classiques comme Metal Gear Solid et Tomb Raider.",
       cinema: "Grand fan de cinéma. Réalisateur préféré : Christopher Nolan. Film préféré : très probablement Interstellar. J'aime particulièrement les films à suspens et aux scénarios complexes — j'aime me casser la tête sur les énigmes et reconstituer le puzzle. De manière plus légère, je suis aussi très client des films de l'univers Marvel. Coup de cœur particulier pour Drive avec Ryan Gosling.",
     },
+    profile: {
+      lookingFor: "Actuellement Consultant Data Engineer & Expert IA chez JEMS, en mission chez des clients de la logistique et du bâtiment. Ouvert aux opportunités dans l'IA au sens large (LLMs, RAG, agents, etc.). Idéalement un CDI en full remote — c'est déjà le cas aujourd'hui, il y est pleinement à l'aise et efficace. A pour projet de s'expatrier en Suisse avec sa famille dans les prochaines années : ouvert aux opportunités en Suisse romande.",
+      languages: "Français (langue maternelle) ; anglais technique — capable de travailler dans un environnement professionnel anglophone.",
+      clearance: "A détenu une habilitation Secret Défense chez Naval Group. Habitué aux environnements très contraints, techniquement comme en matière de sécurité.",
+      sectors: "Cœur de métier : Data Engineering et IA. Plus de 5 ans dans la défense (Naval Group) — développement SQL sur Oracle et MySQL, macros VBA sur Excel, responsable de bases de données de programmes, création et consolidation de plans de maintenance depuis la base logistique (BASL), puis responsable des paramétrages métiers sur un projet de refonte applicative (agile : daily meetings, sprint reviews) avec formations utilisateurs et conduite du changement. Depuis, chez JEMS : montée en compétence sur des outils modernes (SnapLogic, Snowflake, Talend) et développement de pipelines inter-applicatifs, du simple déplacement de fichiers au mapping complexe (gestion d'erreurs, logging) pour des clients du bâtiment. En parallèle, montée en compétence IA/LLMs via des projets personnels et de la veille. Aujourd'hui en mission JEMS sur un système automatisé de prise de commandes par mail intégrant une brique agentique (LangFlow + Python).",
+      results: "Chez Naval Group : responsable d'une base de production (des millions de lignes — équipements, maintenances, rechanges, outillages, ressources), 50+ utilisateurs quotidiens ; un retard de livraison des plans de maintenance pouvait immobiliser un navire ou sous-marin plusieurs jours à semaines, coûter des centaines de milliers d'euros, avec un enjeu de sécurité nationale. Chez JEMS : équipe d'une dizaine de consultants ; missions allant d'équipes d'une vingtaine de personnes au travail en solo. Projet d'automatisation des commandes par mail : remplace un traitement 100 % manuel (150+ mails/jour × 17 sites nationaux) — mails récupérés automatiquement, données extraites par LLM et persistées en PostgreSQL, interface Python (NiceGUI) où les utilisateurs n'ont plus qu'à valider ou corriger.",
+      certifications: "Big Data (cluster Hadoop, Cloudera), cybersécurité (Cybercitizen 880/1000). Cherche à passer des certifications en IA.",
+      techEnvironment: "CI/CD (GitHub, GitLab) ; à l'aise sur Windows, Linux (et distributions) et macOS ; DBeaver pour les bases de données, VS Code pour le développement, entre autres.",
+      workStyle: "Très autonome et souvent plus efficace en solo, mais capable d'animer une équipe par son dynamisme, son exigence de qualité, sa communication et sa pédagogie. Plutôt perfectionniste, rigoureux dans ses méthodes et sa documentation.",
+      exploring: "Explore l'IA en développant divers projets, simples mais couvrant différents aspects (RAG, fine-tuning, agents, vision). Souhaite approfondir ces compétences sur de nouveaux cas d'usage.",
+    },
     labels: {
       about: "À propos",
       experience: "Expérience",
@@ -285,6 +296,17 @@ window.CV_CONTENT = {
       videoGames: "Avid gamer, mostly online co-op. MMORPG: World of Warcraft. FPS / multiplayer: Overwatch, Counter-Strike, Rainbow Six Siege. On the solo side, I love narrative-driven, cinematic experiences with intricate plots — The Last of Us, Death Stranding, Beyond Two Souls — as well as more classic series like Metal Gear Solid and Tomb Raider.",
       cinema: "Big movie fan. Favorite director: Christopher Nolan. Favorite film: probably Interstellar. I'm drawn to suspense and complex plots — I enjoy chewing on puzzles and piecing them together. On the lighter side, I'm also a fan of the Marvel cinematic universe. Special mention for Drive with Ryan Gosling.",
     },
+    profile: {
+      lookingFor: "Currently a Consultant Data Engineer & AI Expert at JEMS, on assignment with logistics and construction clients. Open to opportunities in AI broadly (LLMs, RAG, agents, etc.). Ideally a permanent (CDI) full-remote role — already the case today, and he is fully comfortable and effective working remotely. Plans to move to Switzerland with his family in the coming years: open to opportunities in French-speaking Switzerland (Suisse romande).",
+      languages: "French (native); technical English — able to work in an English-speaking professional environment.",
+      clearance: "Held a French 'Secret Défense' security clearance while at Naval Group. Used to highly constrained environments, both technically and in terms of security.",
+      sectors: "Core expertise: Data Engineering and AI. 5+ years in defense (Naval Group) — SQL development on Oracle and MySQL, Excel VBA macros, database owner for programs, building and consolidating maintenance plans from the logistics database (BASL), then business-configuration lead on an application-replacement project (agile: dailies, sprint reviews) with user training and change management. Since then, at JEMS: ramped up on modern tooling (SnapLogic, Snowflake, Talend) and built inter-application pipelines, from simple file moves to complex data mapping (error handling, logging) for construction clients. In parallel, grew AI/LLM skills through personal projects and continuous learning. Now on a JEMS assignment building an automated email-order-intake system with an agentic component (LangFlow + Python).",
+      results: "At Naval Group: owner of a production database (millions of rows — equipment, maintenance, spares, tooling, resources), 50+ daily users; a delay in delivering maintenance plans could immobilize a ship or submarine for days to weeks, cost hundreds of thousands of euros, with national-security stakes. At JEMS: team of ~10 consultants; assignments ranging from ~20-person teams to working solo. Email-order automation project: replaces a fully manual process (150+ emails/day × 17 national sites) — emails auto-retrieved, data extracted via LLM and stored in PostgreSQL, with a Python (NiceGUI) interface where users only validate or correct orders.",
+      certifications: "Big Data (Hadoop cluster, Cloudera), cybersecurity (Cybercitizen 880/1000). Looking to earn AI certifications.",
+      techEnvironment: "CI/CD (GitHub, GitLab); comfortable on Windows, Linux (and distros) and macOS; DBeaver for databases, VS Code for development, among others.",
+      workStyle: "Highly autonomous and often most effective solo, but able to energize a team through his drive, high standards, communication and teaching ability. Something of a perfectionist, rigorous in his methods and documentation.",
+      exploring: "Exploring AI by building various projects — small but covering different facets (RAG, fine-tuning, agents, vision). Keen to deepen these skills on new use cases.",
+    },
     labels: {
       about: "About",
       experience: "Experience",
@@ -328,6 +350,18 @@ window.CV_SYSTEM_PROMPT = (lang) => {
   const softSkills = (c.softSkills || []).map(s => `- ${s}`).join('\n');
   const interests = Object.entries(c.interests || {}).map(([k, v]) => `- ${k}: ${v}`).join('\n');
   const contact = `Email: ${c.meta.email} | GitHub: github.com/mrSvet0zar | LinkedIn: linkedin.com/in/milan-ganivet`;
+  const p = c.profile || {};
+  const profileBlock = [
+    p.lookingFor ? `AVAILABILITY & JOB SEARCH:\n${p.lookingFor}` : '',
+    p.languages ? `LANGUAGES: ${p.languages}` : '',
+    p.clearance ? `SECURITY CLEARANCE: ${p.clearance}` : '',
+    p.sectors ? `SECTORS & CAREER PATH:\n${p.sectors}` : '',
+    p.results ? `KEY RESULTS & SCALE:\n${p.results}` : '',
+    p.certifications ? `CERTIFICATIONS: ${p.certifications}` : '',
+    p.techEnvironment ? `TECHNICAL ENVIRONMENT: ${p.techEnvironment}` : '',
+    p.workStyle ? `WORKING STYLE: ${p.workStyle}` : '',
+    p.exploring ? `CURRENTLY EXPLORING: ${p.exploring}` : '',
+  ].filter(Boolean).join('\n\n');
   const languageRule = lang === 'fr'
     ? "Réponds EXCLUSIVEMENT en français, de façon concise (2-4 phrases max), ton direct et technique."
     : "Reply EXCLUSIVELY in English, concise (2-4 sentences max), direct and technical tone.";
@@ -347,6 +381,8 @@ When you decline, keep it short and friendly, in the reply language — e.g. ${r
 
 BACKGROUND:
 ${c.about.join(' ')}
+
+${profileBlock}
 
 EXPERIENCE:
 ${exps}
