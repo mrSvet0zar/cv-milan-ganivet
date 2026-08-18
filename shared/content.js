@@ -10,6 +10,7 @@ window.CV_CONTENT = {
       years: 9,
       tagline: "Je construis des pipelines de données robustes et des systèmes d'IA en production.",
       availability: "En poste",
+      education: "Ingénieur des Mines d'Alès",
     },
     about: [
       "L'IA est aujourd'hui au cœur de ma pratique : je conçois des systèmes qui cherchent, raisonnent et décident; et je m'attache à les rendre fiables là où, d'habitude, l'expérimentation s'arrête.",
@@ -178,6 +179,7 @@ window.CV_CONTENT = {
       years: 9,
       tagline: "I build robust data pipelines and production-grade AI systems.",
       availability: "Currently employed",
+      education: "Engineer — Mines d'Alès",
     },
     about: [
       "AI is now at the core of my work: I build systems that search, reason and decide; and I focus on making them reliable where experimentation usually stops.",

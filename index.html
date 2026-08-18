@@ -161,6 +161,7 @@
   .badge { font-family: var(--font-mono); font-size: 11px; padding: 4px 9px; border-radius: 4px; background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--line); }
   .badge.avail { color: var(--green); border-color: color-mix(in oklab, var(--green) 40%, var(--line)); }
   .badge.loc::before { content: "📍 "; }
+  .badge.grad::before { content: "🎓 "; }
 
   /* Output widgets */
   .widget {
@@ -510,6 +511,7 @@ function renderNotebook() {
     <p class="subtitle"><em>${c.meta.title}</em> — ${c.meta.tagline}</p>
     <div class="badges">
       <span class="badge loc">${c.meta.location}</span>
+      <span class="badge grad">${c.meta.education}</span>
       <span class="badge">${c.meta.years} ${L.years}</span>
       <span class="badge avail" style="color: rgb(222, 74, 74)">● ${L.available}</span>
       <span class="badge"><a href="mailto:${c.meta.email}" style="color:inherit;text-decoration:none;">${c.meta.email}</a></span>
