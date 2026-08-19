@@ -156,6 +156,7 @@
   .cell-md h2 { font-family: var(--font-body); font-size: 22px; font-weight: 600; margin: 24px 0 8px; color: var(--text); letter-spacing: -0.01em; }
   .cell-md h2::before { content: "##"; color: var(--accent); margin-right: 10px; font-family: var(--font-mono); opacity: 0.5; }
   .cell-md p { color: var(--text-dim); margin: 6px 0; max-width: 70ch; }
+  .cell-md .about-text p { text-align: justify; text-justify: inter-word; }
   .cell-md .subtitle { color: var(--text); font-size: 16px; }
   .cell-md .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
   .badge { font-family: var(--font-mono); font-size: 11px; padding: 4px 9px; border-radius: 4px; background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--line); }
@@ -529,7 +530,7 @@ from cv import experience, projects, skills`,
   );
 
   // --- About / heading 2
-  html += mdCell(`<h2>${L.about}</h2>${c.about.map(p => `<p>${p}</p>`).join('')}`);
+  html += mdCell(`<h2>${L.about}</h2><div class="about-text">${c.about.map(p => `<p>${p}</p>`).join('')}</div>`);
 
   // AI assistant: floating chatbot (see #aiBot) — the old inline cell was moved
   // there so it doesn't break the notebook reading rhythm.
