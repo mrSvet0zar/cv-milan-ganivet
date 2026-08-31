@@ -88,6 +88,16 @@ window.CV_CONTENT = {
         impact: "Boucle agentique · 6 outils",
         url: "https://github.com/mrSvet0zar/data-analysis-agent",
       },
+      {
+        name: "faceinsight",
+        tagline: "Analyse faciale multi-attributs (deep learning)",
+        description: "Modèle multi-tâches fine-tuné maison (backbone ResNet-18) qui prédit émotion, âge, genre perçu, pilosité et cheveux depuis webcam, photo ou vidéo — plus une heuristique de vision classique pour la couleur des yeux. 4 runs itérés et comparés dans W&B, analyse de biais par sous-groupe, cadrage éthique (aucune identification, aucune image conservée).",
+        stack: ["PyTorch", "MediaPipe", "FastAPI", "Next.js", "W&B"],
+        lang: "Python",
+        impact: "Émotion 79,6 % · 5 tâches · démo live",
+        url: "https://github.com/mrSvet0zar/faceinsight",
+        demo: "https://faceinsight-topaz.vercel.app",
+      },
     ],
     skills: {
       "IA & LLM": [
@@ -256,6 +266,16 @@ window.CV_CONTENT = {
         lang: "Python",
         impact: "Agentic loop · 6 tools",
         url: "https://github.com/mrSvet0zar/data-analysis-agent",
+      },
+      {
+        name: "faceinsight",
+        tagline: "Multi-attribute facial analysis (deep learning)",
+        description: "Home-grown multi-task fine-tuned model (ResNet-18 backbone) predicting emotion, age, perceived gender, facial hair and hair from webcam, photo or video — plus a classical-CV heuristic for eye color. 4 iterated runs compared in W&B, per-subgroup bias analysis, ethical framing (no identification, no images kept).",
+        stack: ["PyTorch", "MediaPipe", "FastAPI", "Next.js", "W&B"],
+        lang: "Python",
+        impact: "Emotion 79.6% · 5 tasks · live demo",
+        url: "https://github.com/mrSvet0zar/faceinsight",
+        demo: "https://faceinsight-topaz.vercel.app",
       },
     ],
     skills: {

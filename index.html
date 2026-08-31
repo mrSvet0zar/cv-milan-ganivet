@@ -568,11 +568,12 @@ from cv import experience, projects, skills`,
 
   // --- Projects heading + subplots
   html += mdCell(`<h2>${L.projects}</h2><p>${lang === 'fr' ? 'Open source & side-projects — rendus comme des subplots.' : 'Open-source & side-projects — rendered as subplots.'}</p>`);
+  const projRows = Math.ceil(c.projects.length / 2);
   html += codeCell(
-`fig, ax = plt.subplots(2, 2, figsize=(10, 6))
+`fig, ax = plt.subplots(${projRows}, 2, figsize=(10, ${projRows * 3}))
 projects.render(ax)`,
     `<div class="widget">
-      <div class="subplots-title">fig, axes = 2×2 subplots · ${c.projects.length} items</div>
+      <div class="subplots-title">fig, axes = ${projRows}×2 subplots · ${c.projects.length} items</div>
       <div class="subplots">
         ${c.projects.map(p => `
           <a class="subplot" href="${p.url}" target="_blank" rel="noopener">
